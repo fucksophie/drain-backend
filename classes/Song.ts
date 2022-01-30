@@ -11,7 +11,7 @@ export default class Song extends ProbeFile {
 			this.date = probedFile.date;
 			this.title = probedFile.title;
 			
-			this.duration = probedFile.duration;
+			this.duration = probedFile.duration || 1000;
 
 			this.file = file;
 			callback(this);

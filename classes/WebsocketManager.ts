@@ -27,8 +27,6 @@ export default class WebsocketManager {
 	attach(ws: WebSocket) {
 		ws.addEventListener("open", () => {
 			this.sockets.push(ws);
-
-			ws.send("// Version 3");
 			
 			this.sendPacket({
 				type: "song",
