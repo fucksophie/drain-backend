@@ -27,6 +27,11 @@ export default class WebsocketManager {
 	attach(ws: WebSocket) {
 		ws.addEventListener("open", () => {
 			this.sockets.push(ws);
+
+			this.sendPacket({
+				type: "playlist",
+				playlist: this.songManager.songs
+			}, ws);
 			
 			this.sendPacket({
 				type: "song",
